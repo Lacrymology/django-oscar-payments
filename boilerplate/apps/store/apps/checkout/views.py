@@ -9,11 +9,10 @@
 
 """
 from django import forms
-from django.http import HttpResponseRedirect
 from django.views.generic import FormView
+from django.shortcuts import redirect
 
 from boilerplate.apps.store import import_shop_app
-from django.shortcuts import redirect
 
 class PaymentDetailsView(FormView):
     template_name = 'checkout/payment_details.html'
