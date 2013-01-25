@@ -8,6 +8,7 @@
 .. moduleauthor:: Tomas Neme <lacrymology@gmail.com>
 
 """
+from django.conf.urls import patterns, url
 from django.utils.translation import ugettext_lazy as _
 from boilerplate.apps.store.modules.payment.base.app import PaymentModule
 
@@ -17,6 +18,11 @@ class PaypalPaymentModule(PaymentModule):
 
     def get_urls(self):
         from paypal.express import urls
-        return urls.urlpatterns
+        from sandbox.apps.checkout import views
+        urlpatterns = patterns(
+            '',
+            url('^$', views.PaymentDetailsView.as_view(), name='paypal-index'),
+            )
+        return urlpatterns + urls.urlpatterns
 
 application = PaypalPaymentModule()
