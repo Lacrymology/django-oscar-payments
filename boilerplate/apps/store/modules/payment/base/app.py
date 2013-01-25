@@ -14,6 +14,8 @@ from oscar.core.application import Application
 class PaymentModule(Application):
     """
     Base payment module.
+
+    To create a payment module,subclass this.
     """
     #: This is used from the checkout app and needs to be defined in each
     #: subclass
@@ -30,3 +32,11 @@ class PaymentModule(Application):
         :return: a Tuple as expected by forms.ChoiceFields' choices parameter
         """
         return (self.module_name, self.verbose_name)
+
+    def get_root_url(self):
+        """
+        Get this module's root url for use in returning HTTPResponseRedirect
+
+        :return: module_name-index
+        """
+        return "{}-index".format(self.module_name)
