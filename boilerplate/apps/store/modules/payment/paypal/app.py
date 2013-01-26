@@ -18,7 +18,7 @@ class PaypalPaymentModule(PaymentModule):
 
     def get_urls(self):
         from paypal.express import urls
-        from sandbox.apps.checkout import views
+        from boilerplate.apps.store.modules.payment.paypal import views
         urlpatterns = patterns(
             '',
             url('^$', views.PaymentDetailsView.as_view(), name='paypal-index'),
