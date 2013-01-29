@@ -9,8 +9,9 @@
 
 """
 from django.views.generic import RedirectView
+from boilerplate.apps.store.modules.payment.base.views import BaseRootMixin
 
-class PaypalRootView(RedirectView):
+class PaypalRootView(BaseRootMixin, RedirectView):
     """
     By default we don't add the payflow-pro stuff, so all this really needs to
     do is change the render template.

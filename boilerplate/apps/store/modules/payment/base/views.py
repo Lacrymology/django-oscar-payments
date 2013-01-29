@@ -12,14 +12,15 @@ from boilerplate.apps.store import import_shop_app
 
 from oscar.apps.checkout import views
 
-class BaseRootView(views.PaymentDetailsView):
+class BaseRootMixin(object):
     """
-    Base class for payment modules "root" view.
+    Add base
 
     * allows for `template_name` and `template_name_preview` to be lists instead
       of single strings
     * adds `preview_url` and `method_index_url` variables to the context
     """
+
     #: for internal usage. This is why boilerplate.apps.store.modules.payment.base.app.PaymentModule sets module=self in every view
     module = None
 
@@ -43,6 +44,11 @@ class BaseRootView(views.PaymentDetailsView):
         ctx = {
             'preview_url': self.module.get_preview_url(),
             'payment_module_root': self.module.get_root_url(),
-        }
-        ctx.update(super(BaseRootView, self).get_context_data(**kwargs))
+            }
+        ctx.update(super(BaseRootMixin, self).get_context_data(**kwargs))
         return ctx
+
+class BaseRootView(BaseRootMixin, views.PaymentDetailsView):
+    """
+    Base class for payment modules "root" view.
+    """
