@@ -21,7 +21,9 @@ class PaypalPaymentModule(PaymentModule):
         from boilerplate.apps.store.modules.payment.paypal import views
         urlpatterns = patterns(
             '',
-            url('^$', views.PaymentDetailsView.as_view(), name='paypal-index'),
+            url('^$', views.PaymentDetailsView.as_view(),
+                kwargs={'preview': True},
+                name=self.get_root_url()),
             )
         return urlpatterns + urls.urlpatterns
 
