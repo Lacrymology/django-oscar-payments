@@ -61,11 +61,11 @@ class PaymentDetailsView(FormMixin, views.PaymentDetailsView):
         class PaymentModuleForm(forms.Form):
             module = forms.ChoiceField(choices=[
                 m['app'].get_choice()
-                for m in self.app.get_modules().values()],
+                for m in self.app.modules.values()],
                                        widget=forms.RadioSelect)
         return PaymentModuleForm
 
     def form_valid(self, form):
         module_name = form.cleaned_data['module']
-        module = self.app.get_modules()[module_name]['app']
+        module = self.app.modules[module_name]['app']
         return redirect(module.get_root_url())
