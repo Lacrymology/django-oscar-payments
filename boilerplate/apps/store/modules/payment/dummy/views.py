@@ -8,10 +8,11 @@
 .. moduleauthor:: Tomas Neme <lacrymology@gmail.com>
 
 """
-from oscar.apps.checkout import views
 from oscar.apps.payment import forms
 
-class CollectBillingInfo(views.PaymentDetailsView):
+from boilerplate.apps.store.modules.payment.base import views
+
+class CollectBillingInfo(views.BaseRootView):
     """
     Collect billing info and pass it on.
     """

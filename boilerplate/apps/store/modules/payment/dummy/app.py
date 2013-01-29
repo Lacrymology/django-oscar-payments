@@ -14,14 +14,8 @@ from boilerplate.apps.store.modules.payment.base.app import PaymentModule
 from boilerplate.apps.store.modules.payment.dummy import views
 
 class DummyPaymentApplication(PaymentModule):
-    module_name = 'dummy'
+    name = 'dummy'
     verbose_name = _('Credit Cards')
-    def get_urls(self):
-        base_patterns = super(DummyPaymentApplication, self).get_urls()
-        urlpatterns = patterns(
-            '',
-            url(r'^$', views.CollectBillingInfo.as_view(), name=self.get_root_url())
-        )
-        return urlpatterns + base_patterns
+    root_view = views.CollectBillingInfo
 
 application = DummyPaymentApplication()
