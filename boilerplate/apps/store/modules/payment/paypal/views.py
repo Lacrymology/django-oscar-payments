@@ -10,7 +10,7 @@
 """
 from django.views.generic import RedirectView
 
-class PaymentDetailsView(RedirectView):
+class PaypalRootView(RedirectView):
     """
     By default we don't add the payflow-pro stuff, so all this really needs to
     do is change the render template.
