@@ -20,11 +20,8 @@ class BaseRootView(views.PaymentDetailsView):
       of single strings
     * adds `preview_url` and `method_index_url` variables to the context
     """
-
-    def __init__(self, *args, **kwargs):
-        super(BaseRootView, self).__init__(*args, **kwargs)
-        self.app = import_shop_app('checkout', 'app').application
-
+    #: for internal usage. This is why boilerplate.apps.store.modules.payment.base.app.PaymentModule sets module=self in every view
+    module = None
 
     def get_template_names(self):
         """
@@ -43,6 +40,9 @@ class BaseRootView(views.PaymentDetailsView):
                 return [self.template_name]
 
     def get_context_data(self, **kwargs):
-        ctx = {}
-        ctx.update(super(BaseRootView, self).get_context_data())
+        ctx = {
+            'preview_url': self.module.get_preview_url(),
+            'payment_module_root': self.module.get_root_url(),
+        }
+        ctx.update(super(BaseRootView, self).get_context_data(**kwargs))
         return ctx
