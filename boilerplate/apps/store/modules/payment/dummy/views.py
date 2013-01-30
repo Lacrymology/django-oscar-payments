@@ -8,9 +8,8 @@
 .. moduleauthor:: Tomas Neme <lacrymology@gmail.com>
 
 """
-from oscar.apps.payment import forms
-
 from boilerplate.apps.store.modules.payment.base import views
+from boilerplate.apps.store.modules.payment.dummy import forms
 
 class CollectBillingInfo(views.BaseRootView):
     """
@@ -26,6 +25,8 @@ class CollectBillingInfo(views.BaseRootView):
         return ctx
 
     def post(self, request, *args, **kwargs):
+        # this is set by the preview template on the form. This should be more
+        # elegantly handled, I think
         if request.POST.get('action', '') == 'place_order':
             return self.do_place_order(request)
         bankcard_form = forms.BankcardForm(request.POST)
