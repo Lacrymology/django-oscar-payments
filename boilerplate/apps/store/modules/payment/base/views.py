@@ -8,20 +8,20 @@
 .. moduleauthor:: Tomas Neme <lacrymology@gmail.com>
 
 """
-from boilerplate.apps.store import import_shop_app
-
 from oscar.apps.checkout import views
 
 class BaseRootMixin(object):
     """
-    Add base
+    Add base behavior for root views:
 
     * allows for `template_name` and `template_name_preview` to be lists instead
       of single strings
     * adds `preview_url` and `method_index_url` variables to the context
     """
 
-    #: for internal usage. This is why boilerplate.apps.store.modules.payment.base.app.PaymentModule sets module=self in every view
+    #: for internal usage. This is why
+    #: boilerplate.apps.store.modules.payment.base.app.PaymentModule
+    #: sets module=self in every view
     module = None
 
     def get_template_names(self):
