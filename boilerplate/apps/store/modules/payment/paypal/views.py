@@ -19,7 +19,7 @@ class PaypalRootView(BaseRootMixin, RedirectView):
     # DO NOT FORGET: this is paypal express checkout, their site will take care
     # of letting the user review their order
 
-    url = 'paypal-direct-payment'
+    url = 'paypal-redirect'
 
     def get_redirect_url(self, **kwargs):
         from django.core.urlresolvers import reverse
