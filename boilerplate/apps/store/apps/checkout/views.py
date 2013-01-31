@@ -33,6 +33,14 @@ class PaymentDetailsView(FormMixin, views.PaymentDetailsView):
         super(PaymentDetailsView, self).__init__(*args, **kwargs)
         self.app = import_shop_app('checkout', 'app').application
 
+    def get_success_url(self):
+        """
+        This needs to be overriden because FormMixin is before in the MRO and it
+        raises if not overriden
+        :return: `oscar.apps.checkout.views.PaymentDetailsView.get_success_url`
+        """
+        return views.PaymentDetailsView.get_success_url(self)
+
     def get_context_data(self, **kwargs):
         form_class = self.get_form_class()
         form = self.get_form(form_class)
