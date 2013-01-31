@@ -59,10 +59,11 @@ class PaymentDetailsView(FormMixin, views.PaymentDetailsView):
 
     def get_form_class(self):
         class PaymentModuleForm(forms.Form):
-            module = forms.ChoiceField(choices=[
-                m['app'].get_choice()
-                for m in self.app.modules.values()],
-                                       widget=forms.RadioSelect)
+            module = forms.ChoiceField(
+                label='', # no label for this field
+                choices=[m['app'].get_choice()
+                         for m in self.app.modules.values()],
+                widget=forms.RadioSelect)
         return PaymentModuleForm
 
     def form_valid(self, form):
