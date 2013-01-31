@@ -59,7 +59,7 @@ class BankcardBillcardMixin(object):
     #: bankcard form class
     bankcard_form_class = forms.BankcardForm
     #: default bankcard/billing hidden forms preview template
-    template_name_preview = "checkuot/bankcard_billing_preview.html"
+    template_name_preview = "checkout/bankcard_billing_preview.html"
     #: billing address form class
     billing_address_form_class = forms.BillingAddressForm
 
@@ -86,7 +86,7 @@ class BankcardBillcardMixin(object):
         """
         if type not in ('bankcard', 'billing_address'):
             raise PaymentError, "Form type parameter is required"
-        return getattr(self, '%s_form_class')(*args, **kwargs)
+        return getattr(self, '{}_form_class'.format(type))(*args, **kwargs)
 
     def post(self, request, *args, **kwargs):
         """
