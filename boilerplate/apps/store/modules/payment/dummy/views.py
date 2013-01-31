@@ -16,6 +16,7 @@ class CollectBillingInfo(views.BaseRootView):
     Collect billing info and pass it on.
     """
     template_name = "checkout/bankcard_billing_form.html"
+    template_name_preview = "checkuot/bankcard_billing_preview.html"
     def get_context_data(self, **kwargs):
         ctx = {
             'bankcard_form': forms.BankcardForm(),
