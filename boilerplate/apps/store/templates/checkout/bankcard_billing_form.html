@@ -1,0 +1,15 @@
+{% extends "oscar/checkout/payment_details.html" %}
+{% load i18n %}
+{% load url from future %}
+
+{% block payment_details %}
+    <div class="sub-header">{% trans "Fill in your details" %}</div>
+    <form method="post" {# action="{% url 'checkout:preview' %}" #} class="form-stacked">
+        {% csrf_token %}
+        <h4>{% trans "Bankcard" %}</h4>
+        {% include "partials/form_fields.html" with form=bankcard_form %}
+        <h4>{% trans "Billing address" %}</h4>
+        {% include "partials/form_fields.html" with form=billing_address_form %}
+        <button type="submit" class="btn btn-large">{% trans "Continue" %}</button>
+    </form>
+{% endblock %}
