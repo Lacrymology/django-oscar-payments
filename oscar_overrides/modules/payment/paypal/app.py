@@ -9,8 +9,8 @@
 
 """
 from django.utils.translation import ugettext_lazy as _
-from boilerplate.apps.store.modules.payment.base.app import PaymentModule
-from boilerplate.apps.store.modules.payment.paypal import views
+from oscar_overrides.modules.payment.base.app import PaymentModule
+from oscar_overrides.modules.payment.paypal import views
 from django.template.loader import render_to_string
 from django.utils.safestring import mark_safe
 

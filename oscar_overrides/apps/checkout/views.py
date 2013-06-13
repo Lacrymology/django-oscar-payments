@@ -13,7 +13,7 @@ from django.shortcuts import redirect
 from django.views.generic.edit import FormMixin
 from oscar.apps.checkout import views
 
-from boilerplate.apps.store import import_shop_app
+from oscar_overrides import import_shop_app
 
 class PaymentDetailsView(FormMixin, views.PaymentDetailsView):
     """

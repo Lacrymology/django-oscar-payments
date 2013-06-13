@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 
 """
-.. module:: boilerplate.apps
+.. module:: oscar_overrides.modules.payment
    :platform: Unix
-   :synopsis: Root of all boilerplate applications
+   :synopsis: base package for base-case payment modules
 
 .. moduleauthor:: Tomas Neme <lacrymology@gmail.com>
 

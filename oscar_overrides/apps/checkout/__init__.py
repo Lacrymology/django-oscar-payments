@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 """
-.. module:: boilerplate.apps.store.apps.checkout
+.. module:: oscar_overrides.apps.checkout
    :platform: Unix
    :synopsis: TODO
 

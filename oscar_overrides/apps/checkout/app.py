@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 """
-.. module:: boilerplate.apps.store.apps.checkout.app
+.. module:: oscar_overrides.apps.checkout.app
    :platform: Unix
    :synopsis: TODO
 
@@ -13,8 +13,8 @@ import logging
 from django.conf import settings
 from django.conf.urls import url, include, patterns
 from oscar.apps.checkout import app
-from boilerplate import try_import
-from boilerplate.apps.store.apps.checkout.views import PaymentDetailsView
+from oscar_overrides import try_import
+from oscar_overrides.apps.checkout.views import PaymentDetailsView
 
 class CheckoutApplication(app.CheckoutApplication):
     payment_details_view = PaymentDetailsView
@@ -43,7 +43,7 @@ class CheckoutApplication(app.CheckoutApplication):
         """
         if self._modules is None:
             self._modules = OrderedDict()
-            for root, appname in settings.BOILER_PAYMENT_MODULES:
+            for root, appname in settings.OSCAR_PAYMENT_MODULES:
                 app = try_import(appname + '.app')
                 if app is not None:
                     application = app.application

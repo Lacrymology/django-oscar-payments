@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 """
-.. module:: boilerplate.apps.store.modules.payment.dummy.app
+.. module:: oscar_overrides.modules.payment.dummy.app
    :platform: Unix
    :synopsis: oscar application for the dummy payment module
 
@@ -10,8 +10,8 @@
 """
 from django.conf.urls import patterns, url
 from django.utils.translation import ugettext_lazy as _
-from boilerplate.apps.store.modules.payment.base.app import PaymentModule
-from boilerplate.apps.store.modules.payment.dummy import views
+from oscar_overrides.modules.payment.base.app import PaymentModule
+from oscar_overrides.modules.payment.dummy import views
 
 class DummyPaymentApplication(PaymentModule):
     name = 'dummy'

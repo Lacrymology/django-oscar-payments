@@ -9,7 +9,7 @@
 
 """
 from django.views.generic import RedirectView
-from boilerplate.apps.store.modules.payment.base.views import BaseRootMixin
+from oscar_overrides.modules.payment.base.views import BaseRootMixin
 
 class PaypalRootView(BaseRootMixin, RedirectView):
     """

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 """
-.. module:: boilerplate.apps.store.modules.dummy
+.. module:: oscar_overrides.modules.dummy
    :platform: Unix
    :synopsis: dummy payment module for oscar. Receives Credit Card data and
         billing address. This is the list of valid test credit card numbers:

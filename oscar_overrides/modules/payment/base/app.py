@@ -13,7 +13,7 @@ from django.utils.translation import ugettext_noop as _
 from oscar.core.application import Application
 from oscar.apps.payment.exceptions import PaymentError
 
-from boilerplate.apps.store.modules.payment.base.views import BaseRootView
+from oscar_overrides.modules.payment.base.views import BaseRootView
 
 class PaymentModule(Application):
     """

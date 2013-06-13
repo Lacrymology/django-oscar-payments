@@ -22,7 +22,7 @@ class BaseRootMixin(object):
     """
 
     #: for internal usage. This is why
-    #: boilerplate.apps.store.modules.payment.base.app.PaymentModule
+    #: oscar_overrides.modules.payment.base.app.PaymentModule
     #: sets module=self in every view
     module = None
 

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 """
-.. module:: boilerplate.apps.store
+.. module:: oscar_overrides
    :platform: Unix
    :synopsis: TODO
 
@@ -15,7 +15,7 @@ def shop_app_module_name(appname):
     module = try_import(module_name)
     if module is not None:
         return module_name
-    module_name = 'boilerplate.apps.store.apps.%s' % appname
+    module_name = 'oscar_overrides.apps.%s' % appname
     module = try_import(module_name)
     if module is not None:
         return module_name
