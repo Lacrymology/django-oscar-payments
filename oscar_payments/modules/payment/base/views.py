@@ -22,7 +22,7 @@ class BaseRootMixin(object):
     """
 
     #: for internal usage. This is why
-    #: oscar_overrides.modules.payment.base.app.PaymentModule
+    #: oscar_payments.modules.payment.base.app.PaymentModule
     #: sets module=self in every view
     module = None
 

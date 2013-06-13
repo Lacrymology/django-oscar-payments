@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 
 """
-.. module:: oscar_overrides.modules.payment
+.. module:: oscar_payments.apps
    :platform: Unix
-   :synopsis: base package for base-case payment modules
+   :synopsis: containing module for oscar app overrides
 
 .. moduleauthor:: Tomas Neme <lacrymology@gmail.com>
 

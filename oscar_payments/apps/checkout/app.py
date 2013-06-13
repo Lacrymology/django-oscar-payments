@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 """
-.. module:: oscar_overrides.apps.checkout.app
+.. module:: oscar_payments.apps.checkout.app
    :platform: Unix
    :synopsis: TODO
 
@@ -13,8 +13,8 @@ import logging
 from django.conf import settings
 from django.conf.urls import url, include, patterns
 from oscar.apps.checkout import app
-from oscar_overrides import try_import
-from oscar_overrides.apps.checkout.views import PaymentDetailsView
+from oscar_payments import try_import
+from oscar_payments.apps.checkout.views import PaymentDetailsView
 
 class CheckoutApplication(app.CheckoutApplication):
     payment_details_view = PaymentDetailsView

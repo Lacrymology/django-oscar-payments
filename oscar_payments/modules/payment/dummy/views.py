@@ -1,15 +1,15 @@
 # -*- coding: utf-8 -*-
 
 """
-.. module:: oscar_overrides.modules.payment.dummy.views
+.. module:: oscar_payments.modules.payment.dummy.views
    :platform: Unix
    :synopsis: Views to collect and render
 
 .. moduleauthor:: Tomas Neme <lacrymology@gmail.com>
 
 """
-from oscar_overrides.modules.payment.base import views
-from oscar_overrides.modules.payment.dummy import forms
+from oscar_payments.modules.payment.base import views
+from oscar_payments.modules.payment.dummy import forms
 
 class CollectBillingInfo(views.BankcardBillcardMixin, views.BaseRootView):
     """

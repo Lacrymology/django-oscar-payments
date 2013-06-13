@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 """
-.. :module: oscar_overrides.modules.payment.dummy.forms
+.. :module: oscar_payments.modules.payment.dummy.forms
    :platform: Unix
    :synopsis:
 
@@ -12,7 +12,7 @@ from django.utils.translation import ugettext_lazy as _
 from django import forms
 from oscar.apps.payment import forms as payment_forms
 
-from oscar_overrides.modules.payment.dummy import CREDIT_CARDS
+from oscar_payments.modules.payment.dummy import CREDIT_CARDS
 
 
 class BankcardForm(payment_forms.BankcardForm):

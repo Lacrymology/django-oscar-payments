@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 """
-.. module:: oscar_overrides.apps.checkout
+.. module:: oscar_payments.apps.checkout
    :platform: Unix
    :synopsis: TODO
 
