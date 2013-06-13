@@ -8,10 +8,18 @@
 .. moduleauthor:: Tomas Neme <lacrymology@gmail.com>
 
 """
-from boilerplate import try_import, project_name
+import importlib
+from django.conf import settings
+
+def try_import(module):
+    try:
+        return importlib.import_module(module)
+    except ImportError:
+        return None
 
 def shop_app_module_name(appname):
-    module_name = '%s.apps.store.apps.%s' % (project_name(), appname)
+    module_name = '%s.%s' % (settings.OSCAR_OVERRIDES_PACKAGE,
+                                             appname)
     module = try_import(module_name)
     if module is not None:
         return module_name

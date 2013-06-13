@@ -48,7 +48,7 @@ class CheckoutApplication(app.CheckoutApplication):
                 if app is not None:
                     application = app.application
                     self._modules[application.name] = {'url': root,
-                                                      'app': application}
+                                                       'app': application}
                 else:
                     self.log.warning("Oscar misconfigured! %s.app cannot be "
                                      "imported", appname)
